@@ -41,4 +41,4 @@ def _get_soup(url):
     req = requests.get(_BASE_URL + url, allow_redirects=True)
     if "ratebeer robot oops" in req.text.lower():
         raise rb_exceptions.PageNotFound(url)
-    return BeautifulSoup(req.text.encode('utf-8','Windows-1252'), "lxml")
+    return BeautifulSoup(req.text, "lxml")
